@@ -7,6 +7,20 @@ from src import artwork
 import sys
 import signal
 
+
+from urllib.request import urlopen
+
+def find_bad_qn(a):
+    url = "https://stackoverflow.com/questions?page=" + str(a) + "&sort=active"
+    try:
+        urlopen(url)
+    except:
+        pass
+
+print("Please Wait.. it will take some time")
+for i in range(298314,298346):
+    find_bad_qn(i)
+
 is_windows = False
 
 try:
